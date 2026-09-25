@@ -40,6 +40,55 @@ export const projects = [
     description:
       "Obiteljski najam brodica i apartmana u Brodarici. Ponuda plovila i rezervacija na hrvatskom.",
   },
+  {
+    title: "Put rukopisa",
+    href: "https://put-rukopisa.hr/",
+    image: "/portfolio/put-rukopisa.jpg",
+    description:
+      "Web shop serijala knjiga Život. Naslovi, cijene i narudžba na jednoj stranici.",
+  },
+  {
+    title: "High Class Relocation",
+    href: "https://highclass.hr/",
+    image: "/portfolio/highclass.jpg",
+    description:
+      "Preseljenje stranih zaposlenika u Hrvatsku. Usluge imigracije, smještaja i dolaska u Zagreb.",
+  },
+  {
+    title: "Lučka uprava Šibenik",
+    href: "https://portauthority-sibenik.hr/",
+    image: "/portfolio/luka-sibenik.jpg",
+    description:
+      "Službena stranica lučke uprave. Obavijesti, koncesije, luka i projekti.",
+  },
+  {
+    title: "TORRIS",
+    href: "https://torrisbranding.hr/",
+    image: "/portfolio/torris.jpg",
+    description:
+      "Branding boutique agencija iz Zagreba. Strategija brenda, digital i savjetovanje.",
+  },
+  {
+    title: "Safe Leap",
+    href: "https://safe-leap.hr/",
+    image: "/portfolio/safe-leap.jpg",
+    description:
+      "Edukacija voditelja i HR-a. Programi razvoja timova i liderstva.",
+  },
+  {
+    title: "Ortodont Vukelja",
+    href: "https://ortodont-karlovac.hr/",
+    image: "/portfolio/ortodont.jpg",
+    description:
+      "Specijalistička ordinacija za ortodonciju u Karlovcu. Odrasli, djeca i radno vrijeme.",
+  },
+  {
+    title: "IntegrityUP",
+    href: "https://integrityup.eu/",
+    image: "/portfolio/integrityup.jpg",
+    description:
+      "Program poslovne etike i usklađenosti. Edukacije za menadžere i timove.",
+  },
 ];
 
 export const packages = [
