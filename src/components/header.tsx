@@ -26,7 +26,7 @@ export function Header() {
           href="#kontakt"
           className="shrink-0 rounded-md border border-white/15 px-4 py-2.5 text-xs tracking-[0.14em] text-accent uppercase transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
         >
-          Započni projekt →
+          Zatražite ponudu
         </a>
       </Container>
       <Container className="flex gap-5 overflow-x-auto pb-3 md:hidden">

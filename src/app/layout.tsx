@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
+import { siteUrl } from "@/lib/content";
 import "./globals.css";
 
 const geist = Geist({
@@ -8,9 +9,21 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Innowave — Izrada poslovnih web stranica",
+  metadataBase: new URL(siteUrl),
+  title: "Izrada web stranica za obrte i male tvrtke | Innowave",
   description:
-    "Innowave izrađuje stranice, landinge i web shopove za obrte i male firme. Landing 690 €, Start 990 €, Standard 1.500 €, Premium 2.500 €, web shop od 1.690 €. Cijena je fiksna prije početka.",
+    "Izrađujemo poslovne web stranice, landing stranice i web shopove za obrte i male tvrtke. Jasni paketi, unaprijed dogovorena cijena i rok.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Izrada web stranica za obrte i male tvrtke | Innowave",
+    description:
+      "Izrađujemo poslovne web stranice, landing stranice i web shopove za obrte i male tvrtke. Jasni paketi, unaprijed dogovorena cijena i rok.",
+    url: "/",
+    locale: "hr_HR",
+    type: "website",
+  },
 };
 
 export const viewport: Viewport = {

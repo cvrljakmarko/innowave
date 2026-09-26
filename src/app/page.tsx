@@ -1,11 +1,15 @@
 import { Approach } from "@/components/approach";
 import { Contact } from "@/components/contact";
 import { Faq } from "@/components/faq";
+import { FinalCta } from "@/components/final-cta";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { Included } from "@/components/included";
 import { Packages } from "@/components/packages";
 import { Portfolio } from "@/components/portfolio";
+import { Team } from "@/components/team";
+import { Value } from "@/components/value";
 
 export default function Home() {
   return (
@@ -19,10 +23,14 @@ export default function Home() {
       <Header />
       <main id="main">
         <Hero />
+        <Value />
         <Portfolio />
         <Packages />
+        <Included />
         <Approach />
         <Faq />
+        <Team />
+        <FinalCta />
         <Contact />
       </main>
       <Footer />

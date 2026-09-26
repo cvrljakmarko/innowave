@@ -6,7 +6,7 @@ export function Faq() {
     <section id="pitanja" className="scroll-mt-24 border-b border-white/10 py-20 sm:py-28">
       <Container className="grid gap-12 lg:grid-cols-12">
         <h2 className="text-4xl leading-[1.05] font-normal tracking-[-0.04em] sm:text-5xl lg:col-span-4">
-          Pitanja prije ponude.
+          Česta pitanja o izradi web stranica
         </h2>
         <div className="border-t border-white/10 lg:col-span-8">
           {faqs.map((item) => (

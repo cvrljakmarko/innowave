@@ -6,12 +6,14 @@ export function Packages() {
     <section id="cijene" className="scroll-mt-24 border-b border-white/10 py-20 sm:py-28">
       <Container>
         <h2 className="max-w-3xl text-4xl leading-[1.05] font-normal tracking-[-0.04em] sm:text-5xl">
-          Cijena prije početka.
+          Odaberite web stranicu prema potrebama svog poslovanja.
         </h2>
         <p className="mt-5 max-w-2xl text-muted">
-          Landing, poslovna stranica ili web shop. Iznos na kartici je iznos u
-          ponudi i na računu. PDV na njega ne dodajemo. Ako opseg izađe iz
-          paketa, to stoji u ponudi i ne mijenja se usred izrade.
+          Svaki posao ima različite potrebe. Zato nudimo nekoliko jasno
+          definiranih paketa, od jednostavne landing stranice do opsežnije
+          poslovne web stranice i web shopa. Unaprijed znate što je uključeno,
+          koliko projekt stoji i koliko traje izrada. Iznos na kartici je iznos
+          u ponudi i na računu. PDV na njega ne dodajemo.
         </p>
 
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
@@ -29,7 +31,8 @@ export function Packages() {
               </p>
               <h3 className="mt-5 text-2xl tracking-[-0.03em]">{item.name}</h3>
               <p className="mt-4 text-5xl tracking-[-0.04em]">{item.price}</p>
-              <p className="mt-4 text-sm leading-relaxed text-muted">{item.audience}</p>
+              <p className="mt-4 text-sm leading-relaxed text-white">{item.fit}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{item.audience}</p>
               <ul className="mt-8 space-y-3 border-t border-white/10 pt-6 text-sm leading-relaxed">
                 {item.points.map((point) => (
                   <li key={point}>{point}</li>
@@ -46,11 +49,20 @@ export function Packages() {
                     : "border border-white/15 text-accent hover:border-accent"
                 }`}
               >
-                Zatraži ovaj paket
+                Zatražite ponudu
               </a>
             </article>
           ))}
         </div>
+
+        <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted">
+          Hosting i domena nisu u cijeni izrade. Možete ih držati sami ili
+          uzeti godišnji paket od 200 €: domena, hosting, SSL, sigurnosna
+          kopija i do 2 sata sitnih izmjena. Samostalno uređivanje tekstova
+          nije dio paketa. SEO na kartici su početne postavke te stranice, ne
+          pozicija na Googleu. Sve izvan paketa stoji niže, u dodatnim
+          uslugama, i ulazi u ponudu prije početka.
+        </p>
 
         <div className="mt-16">
           <h3 className="text-2xl tracking-[-0.03em]">Dodatne usluge</h3>
