@@ -10,7 +10,7 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "Innowave — Izrada poslovnih web stranica",
   description:
-    "Innowave izrađuje poslovne web stranice za firme i obrte. Tri paketa: Start 1.200 €, Standard 1.500 €, Premium 2.500 €. Cijena i rok poznati su prije početka.",
+    "Innowave izrađuje stranice, landinge i web shopove za obrte i male firme. Landing 690 €, Start 990 €, Standard 1.500 €, Premium 2.500 €, web shop od 1.690 €. Cijena je fiksna prije početka.",
 };
 
 export const viewport: Viewport = {

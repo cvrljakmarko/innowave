@@ -14,8 +14,9 @@ export function Hero() {
           Mi ga stavljamo na web.
         </h1>
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">
-          Poslovne stranice za firme i obrte u Hrvatskoj. Cijena je poznata
-          prije početka. Rok stoji u ponudi i ne mijenja se usred rada.
+          Stranice, landing i web shopovi za obrte i male firme u Hrvatskoj.
+          Cijena je fiksna prije početka. Rok stoji u ponudi i ne mijenja se
+          usred rada.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <a

@@ -11,8 +11,8 @@ export function Contact() {
             Jedan upit. Jedna ponuda.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted">
-            Napišite djelatnost, treba li vam Start, Standard ili Premium, i do
-            kada stranica treba biti online.
+            Napišite djelatnost, treba li vam landing, stranica ili web shop, i
+            do kada treba biti online. Javljamo se sljedeći radni dan.
           </p>
           <a
             href={`mailto:${company.email}`}
