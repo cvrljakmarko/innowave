@@ -8,9 +8,8 @@ export type InquiryState = {
 };
 
 const sent =
-  "Upit je poslan. Odgovor stiže na e-mail koji ste upisali.";
-const failed =
-  "Upit se nije poslao. Možete nam pisati izravno na adresu iznad.";
+  "Poruka je poslana. Odgovorit ćemo u najkraćem mogućem roku.";
+const failed = "Upit se nije poslao. Pokušajte ponovno za trenutak.";
 
 function field(formData: FormData, name: string, max: number) {
   return String(formData.get(name) ?? "")
@@ -72,23 +71,41 @@ export async function sendInquiry(
     email,
   ].filter(Boolean);
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: process.env.CONTACT_FROM ?? "Innowave <hello@innowave.media>",
-      to: [process.env.CONTACT_TO ?? "marko.cvrljak1@gmail.com"],
-      reply_to: email,
-      subject: `Upit za web od ${name}`,
-      text: lines.join("\n"),
-    }),
-  });
+  const recipients = (
+    process.env.CONTACT_TO ?? "marko.cvrljak1@gmail.com,celarmaida@gmail.com"
+  )
+    .split(",")
+    .map((address) => address.trim())
+    .filter(Boolean);
 
-  if (!response.ok) {
-    console.error("Slanje upita nije uspjelo.", response.status);
+  const payload = {
+    from: process.env.CONTACT_FROM ?? "Innowave <hello@innowave.media>",
+    reply_to: email,
+    subject: `Upit za web od ${name}`,
+    text: lines.join("\n"),
+  };
+
+  const results = await Promise.all(
+    recipients.map(async (address) => {
+      const response = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...payload, to: [address] }),
+      });
+
+      if (!response.ok) {
+        console.error("Slanje upita nije uspjelo.", response.status, address);
+        return false;
+      }
+
+      return true;
+    }),
+  );
+
+  if (!results.some(Boolean)) {
     return { status: "error", message: failed };
   }
 

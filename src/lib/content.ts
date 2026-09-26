@@ -1,6 +1,5 @@
 export const company = {
   name: "Innowave",
-  email: "hello@innowave.dev",
   practice: "Izrada poslovnih web stranica",
 };
 
@@ -15,7 +14,7 @@ export const inquiryKinds = [
 export const nav = [
   { href: "#radovi", label: "Projekti" },
   { href: "#cijene", label: "Cijene" },
-  { href: "#tim", label: "Mi" },
+  { href: "#tim", label: "O nama" },
   { href: "#proces", label: "Proces" },
   { href: "#pitanja", label: "Pitanja" },
 ];

@@ -1,4 +1,3 @@
-import { company } from "@/lib/content";
 import { ContactForm } from "./contact-form";
 import { Container } from "./container";
 
@@ -15,12 +14,6 @@ export function Contact() {
             ćemo odgovarajući paket i poslati vam ponudu s jasnim opsegom,
             cijenom i rokom.
           </p>
-          <a
-            href={`mailto:${company.email}`}
-            className="mt-8 inline-block text-2xl tracking-[-0.03em] text-white underline decoration-white/20 underline-offset-8 transition-colors hover:text-accent"
-          >
-            {company.email}
-          </a>
         </div>
         <div className="lg:col-span-7">
           <ContactForm />

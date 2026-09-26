@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { sendInquiry, type InquiryState } from "@/app/actions/contact";
 import { inquiryKinds } from "@/lib/content";
 
@@ -11,7 +11,15 @@ const initialState: InquiryState = { status: "idle", message: "" };
 
 export function ContactForm() {
   const [state, formAction, pending] = useActionState(sendInquiry, initialState);
+  const [popup, setPopup] = useState(false);
   const sent = state.status === "success";
+
+  useEffect(() => {
+    if (!sent) return;
+    setPopup(true);
+    const timer = window.setTimeout(() => setPopup(false), 3000);
+    return () => window.clearTimeout(timer);
+  }, [sent]);
 
   return (
     <form action={formAction} className="relative rounded-xl border border-white/10 bg-navy-2 p-6 sm:p-8">
@@ -70,9 +78,23 @@ export function ContactForm() {
         {pending ? "Šaljem…" : "Zatražite ponudu"}
       </button>
       <p className="mt-4 text-sm leading-relaxed text-muted" aria-live="polite">
-        {state.message ||
-          "Upit se šalje e-poštom nama. Na ovoj stranici podatke ne spremamo."}
+        {sent
+          ? "Poruka je poslana."
+          : state.status === "error"
+            ? state.message
+            : "Upit se šalje e-poštom nama. Na ovoj stranici podatke ne spremamo."}
       </p>
+      {popup ? (
+        <div className="fixed inset-0 z-50 grid place-items-center bg-[#01152b]/75 px-6">
+          <div
+            role="status"
+            className="w-full max-w-md rounded-xl border border-white/10 bg-navy-2 px-8 py-8 text-center"
+          >
+            <p className="text-2xl tracking-[-0.03em] text-white">Poruka je poslana.</p>
+            <p className="mt-3 text-muted">Odgovorit ćemo u najkraćem mogućem roku.</p>
+          </div>
+        </div>
+      ) : null}
     </form>
   );
 }

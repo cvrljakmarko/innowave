@@ -7,11 +7,12 @@ export function Team() {
     <section id="tim" className="scroll-mt-24 border-b border-white/10 py-20 sm:py-28">
       <Container>
         <h2 className="max-w-3xl text-4xl leading-[1.05] font-normal tracking-[-0.04em] sm:text-5xl">
-          S kim radite.
+          O nama.
         </h2>
         <p className="mt-5 max-w-2xl text-muted">
-          Upit, ponuda i izrada idu izravno preko nas. Na projektu nema
-          posrednika.
+          Maida i Marko su web developeri s više od 10 godina iskustva u
+          izradi web stranica. Radimo s obrtima, malim tvrtkama i lokalnim
+          uslugama, kako bismo unaprijedili vaše poslovanje.
         </p>
         <ul className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-2">
           {people.map((person) => (
